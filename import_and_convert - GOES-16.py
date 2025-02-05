@@ -173,7 +173,7 @@ def main():
     start_date = last_file_time + timedelta(seconds=1) if last_file_time else datetime(2025, 2, 1, 0, 0) #Defina a data de início manualmente (formato: ano, mês, dia, hora, minuto)
 
     now = datetime.now(pytz.utc)
-    end_date = datetime(now.year, now.month, now.day, now.hour, now.minute, now.second)
+    end_date = datetime(now.year, now.month, now.day, now.hour, now.minute, now.second) #Define a data final de aquisição para a hora e data atual do sistema
 
     if start_date > end_date:
         print("Ajustando data inicial para período válido.")
