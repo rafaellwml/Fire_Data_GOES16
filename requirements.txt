@@ -1,0 +1,10 @@
+# Arquivo de requisitos para o projeto  
+
+# Bibliotecas necessárias para o projeto  
+xarray==<versão>          # Biblioteca para manipulação de dados multidimensionais  
+pandas==<versão>          # Biblioteca para análise de dados  
+numpy==<versão>           # Biblioteca para computação numérica  
+pyproj==<versão>          # Biblioteca para operações de projeção cartográfica  
+pytz==<versão>            # Biblioteca para manipulação de fusos horários  
+goes2go==<versão>         # Biblioteca para acessar dados do satélite GOES  
+SQLAlchemy==<versão>      # Biblioteca para interação com bancos de dados
