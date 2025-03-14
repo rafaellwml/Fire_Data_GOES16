@@ -108,13 +108,13 @@ def insert_into_postgis(df, engine):
     with engine.connect() as conn:
         for _, row in df.iterrows():
             exists = conn.execute(text("""
-                SELECT 1 FROM temp_codesus.goes 
+                SELECT 1 FROM schema.goes 
                 WHERE geom = :geom AND file_datetime = :file_datetime
                 """), row[['geom', 'file_datetime']].to_dict()).scalar()
 
             if not exists:
-                row['id'] = conn.execute(text("SELECT nextval('temp_codesus.goes_id_seq')")).scalar()
-                row.to_frame().T.to_sql('goes', engine, schema='temp_codesus',
+                row['id'] = conn.execute(text("SELECT nextval('schema.goes_id_seq')")).scalar()
+                row.to_frame().T.to_sql('goes', engine, schema='schema',
                                       if_exists='append', index=False)
                 print(f"Novo registro inserido ID {row['id']}")
             else:
